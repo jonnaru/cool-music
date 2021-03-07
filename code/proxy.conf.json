@@ -1,0 +1,7 @@
+{
+    "/artists/list": {
+      "target": "https://gigital-code-sample-api.herokuapp.com",
+      "secure": true,
+      "changeOrigin": true
+    }
+  }
