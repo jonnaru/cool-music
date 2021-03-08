@@ -10,6 +10,10 @@ export class ListComponent implements OnInit {
 
   artists: any;
 
+  showModal: boolean = false;
+
+  videoLink: String = "";
+
   constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
@@ -18,5 +22,15 @@ export class ListComponent implements OnInit {
       console.log(this.artists)
     });
   }
+
+  handleClickVideo(videoLink: String) {
+    this.showModal = true;
+    this.videoLink = videoLink
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
 
 }
