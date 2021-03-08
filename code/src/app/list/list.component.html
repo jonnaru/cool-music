@@ -1,14 +1,20 @@
-<ul *ngIf="artists">
+<section>
+  <ul *ngIf="artists">
 
-  <li *ngFor="let artist of artists">
-    <p>{{ artist.name }}</p>
-    <p>{{ artist.price }} SEK</p>
-    <a href="{{ artist.video }}">video</a>
-    <img src="{{ artist.picture }}" SEK>
+    <li *ngFor="let artist of artists">
+      <div class="img-container">
+        <img src="{{ artist.picture }}">
+      </div>
+      <h2>{{ artist.name }}</h2>
+      <p class="artist-price">{{ artist.price }} SEK</p>
 
-    <ul *ngIf="artist.tags">
+      <span *ngIf="artist.tags">
+        <p *ngFor="let tag of artist.tags">
+          {{ tag.name }}
+        </p>
+      </span>
+      <a href="{{ artist.video }}">video</a>
+    </li>
 
-      <li *ngFor="let tag of artist.tags">
-        {{ tag.name }}
-      </li>
-    </ul>
+  </ul>
+</section>

@@ -1,0 +1,18 @@
+header {
+  position: sticky;
+  display: flex;
+
+  background: white;
+
+  h1 {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .header-container {
+    margin: auto;
+    width: 100%;
+    max-width: 1400px;
+
+    padding: 20px 10px;
+  }
+}
