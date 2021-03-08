@@ -18,9 +18,8 @@
     </li>
 
   </ul>
+  <app-list-modal *ngIf="showModal === true" [videoLink]="videoLink" (closeModalEvent)="closeModal()">
+  </app-list-modal>
 
-  <p *ngIf="showModal === true">{{ videoLink }}
-    <button (click)="closeModal()">close</button>
-  </p>
 
 </section>

@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-import { FilterbarComponent } from './filterbar/filterbar.component'
+import { FilterbarComponent } from './filterbar/filterbar.component';
+import { ListModalComponent } from './list-modal/list-modal.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     HeaderComponent,
-    FilterbarComponent
+    FilterbarComponent,
+    ListModalComponent
   ],
   imports: [
     BrowserModule,
