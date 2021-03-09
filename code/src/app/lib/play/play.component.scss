@@ -1,0 +1,13 @@
+@import "../../../shared/config";
+
+svg {
+  height: 40px;
+  width: 40px;
+  fill: $primaryFontColor;
+
+  cursor: pointer;
+
+  &:hover {
+    fill: $primaryColor;
+  }
+}

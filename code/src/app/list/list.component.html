@@ -5,15 +5,26 @@
       <div class="img-container">
         <img src="{{ artist.picture }}">
       </div>
-      <h2>{{ artist.name }}</h2>
-      <p class="artist-price">{{ artist.price }} SEK</p>
 
-      <span *ngIf="artist.tags">
-        <p>
-          {{ artist.tags[0].name }}
-        </p>
-      </span>
-      <button (click)="handleClickVideo(artist.video)">video</button>
+      <div class="content-container">
+        <div class="artist-content-container">
+          <h2>{{ artist.name }}</h2>
+          <span *ngIf="artist.tags">
+            <p>
+              <span class="artist-type">
+                {{ artist.tags[0].name }}
+              </span>
+              <span> from {{ artist.price }} SEK</span>
+            </p>
+          </span>
+
+        </div>
+        <div>
+
+
+          <app-icon-button (click)="handleClickVideo(artist.video)"></app-icon-button>
+        </div>
+      </div>
 
     </li>
 

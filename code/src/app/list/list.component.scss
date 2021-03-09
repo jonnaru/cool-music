@@ -1,8 +1,7 @@
-@import "../../shared/variables";
+@import "../../shared/config";
 
 section {
-  max-width: 1400px;
-  margin: auto;
+  @include basicLayout;
 
   ul {
     display: flex;
@@ -15,8 +14,8 @@ section {
 
     li {
       width: 25%;
-      margin-bottom: 20px;
-      padding: 10px;
+      margin-bottom: 30px;
+      padding: 20px;
     }
 
     .img-container {
@@ -33,9 +32,40 @@ section {
       object-fit: cover;
     }
 
+    .artist-type {
+      color: $primaryColor;
+      text-transform: uppercase;
+      // letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .content-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .artist-content-container {
+      display: flex;
+      flex-direction: column;
+    }
+
     h2 {
+      font-size: 24px;
       font-family: $fontStack;
       font-weight: 500;
+      color: $primaryFontColor;
     }
+    p,
+    span {
+      font-size: 14px;
+    }
+    // .play-video-container {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+
+    //   cursor: pointer;
+    // }
   }
 }

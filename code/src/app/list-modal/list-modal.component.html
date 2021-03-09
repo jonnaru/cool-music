@@ -1,3 +1,10 @@
-<p>{{ videoLink }}
-  <button (click)="clickCloseModal()">close</button>
-</p>
+<div class="backdrop">
+  <div class="modal-container">
+    <p>{{ videoLink }}
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/X4bgXH3sJ2Q" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <button (click)="clickCloseModal()">close</button>
+    </p>
+  </div>
+</div>
