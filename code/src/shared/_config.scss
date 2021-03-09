@@ -1,0 +1,12 @@
+// fonts:
+$fontStack: "Poppins", sans-serif;
+
+// colors:
+$primaryColor: #f53b57;
+$primaryFontColor: #333;
+
+//
+@mixin basicLayout {
+  max-width: 1400px;
+  margin: auto;
+}

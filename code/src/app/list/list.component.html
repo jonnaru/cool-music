@@ -22,14 +22,15 @@
         <div>
 
 
-          <app-icon-button (click)="handleClickVideo(artist.video)"></app-icon-button>
+          <app-icon-button (click)="handleClickVideo(artist.video, artist.name)"></app-icon-button>
         </div>
       </div>
 
     </li>
 
   </ul>
-  <app-list-modal *ngIf="showModal === true" [videoLink]="videoLink" (closeModalEvent)="closeModal()">
+  <app-list-modal *ngIf="showModal === true" [videoLink]="videoLink" [artistName]="artistName"
+    (closeModalEvent)="closeModal()">
   </app-list-modal>
 
 
