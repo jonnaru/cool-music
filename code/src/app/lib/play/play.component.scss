@@ -1,13 +1,17 @@
 @import "../../../shared/config";
 
 svg {
-  height: 40px;
-  width: 40px;
-  fill: $primaryFontColor;
+  height: 32px;
+  width: 32px;
+  fill: $secondaryColor;
+  padding-top: 4px;
 
   cursor: pointer;
+  transition: 0.2s;
 
   &:hover {
     fill: $primaryColor;
+    transform: scale(1.1);
+    transition: 0.2s;
   }
 }

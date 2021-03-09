@@ -19,39 +19,49 @@
   }
 
   .modal-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     display: inline-block;
     vertical-align: middle;
 
     width: 60%;
-    // height: 315px;
+  }
 
-    background: #fff;
-    padding: 20px 20px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 11px 15px -7px,
-      rgba(0, 0, 0, 0.14) 0px 24px 38px 3px,
-      rgba(0, 0, 0, 0.12) 0px 9px 46px 8px;
-    border-radius: 6px;
+  .content-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-family: $fontStack;
+      margin-bottom: 10px;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #fff;
+
+      span {
+        color: $primaryColor;
+      }
+    }
   }
 
   .video-container {
     position: relative;
     display: block;
+
     width: 100%;
     padding: 0;
     overflow: hidden;
   }
 
   .video-container::before {
-    padding-top: 56.25%;
     display: block;
+    padding-top: 56.25%;
     content: "";
   }
 
   .video {
     position: absolute;
+
     top: 0;
     bottom: 0;
     left: 0;

@@ -28,7 +28,7 @@ export class ListModalComponent implements OnInit {
   ngOnInit(): void {
     this.url = `https://www.youtube.com/embed/${getId(
       this.videoLink
-    )}?controls=0&autoplay=1`;
+    )}?controls=0`;
     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.url);
   }
 

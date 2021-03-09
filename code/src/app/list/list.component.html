@@ -1,14 +1,17 @@
 <section>
-  <ul *ngIf="artists">
 
+  <ul *ngIf="artists">
     <li *ngFor="let artist of artists">
+
       <div class="img-container">
         <img src="{{ artist.picture }}">
       </div>
 
       <div class="content-container">
         <div class="artist-content-container">
+
           <h2>{{ artist.name }}</h2>
+
           <span *ngIf="artist.tags">
             <p>
               <span class="artist-type">
@@ -19,19 +22,18 @@
           </span>
 
         </div>
+
         <div>
-
-
           <app-icon-button (click)="handleClickVideo(artist.video, artist.name)"></app-icon-button>
         </div>
+
       </div>
 
     </li>
-
   </ul>
+
   <app-list-modal *ngIf="showModal === true" [videoLink]="videoLink" [artistName]="artistName"
     (closeModalEvent)="closeModal()">
   </app-list-modal>
-
 
 </section>

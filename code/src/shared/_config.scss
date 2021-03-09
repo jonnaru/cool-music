@@ -3,10 +3,20 @@ $fontStack: "Poppins", sans-serif;
 
 // colors:
 $primaryColor: #f53b57;
+$secondaryColor: #ccc;
+
 $primaryFontColor: #333;
 
-//
 @mixin basicLayout {
   max-width: 1400px;
   margin: auto;
+}
+
+@mixin iconButton {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+
+  cursor: pointer;
 }

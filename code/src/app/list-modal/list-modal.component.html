@@ -1,12 +1,16 @@
 <div class="backdrop">
   <div class="modal-container">
-    <p>{{ artistName }}</p>
+
+    <div class="content-bar-container">
+      <h1>Viewing video by <span>{{ artistName }}</span></h1>
+      <app-exit (click)="clickCloseModal()"></app-exit>
+    </div>
+
     <div class="video-container">
       <iframe class="video" [src]="safeURL" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
     </div>
-    <button (click)="clickCloseModal()">close</button>
 
   </div>
 </div>
