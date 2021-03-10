@@ -12,6 +12,8 @@ import { PlayComponent } from './lib/play/play.component';
 import { IconButtonComponent } from './lib/icon-button/icon-button.component';
 import { ExitComponent } from './lib/exit/exit.component';
 import { LogoComponent } from './lib/logo/logo.component';
+import { ButtonComponent } from './lib/sign-up-button/button.component';
+import { LoginButtonComponent } from './lib/login-button/login-button.component';
 // import { ModalComponent } from './modal/modal.component'
 
 @NgModule({
@@ -25,16 +27,12 @@ import { LogoComponent } from './lib/logo/logo.component';
     IconButtonComponent,
     ExitComponent,
     LogoComponent,
+    ButtonComponent,
+    LoginButtonComponent,
     // ModalComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
-
+export class AppModule {}

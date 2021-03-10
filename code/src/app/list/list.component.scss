@@ -19,6 +19,10 @@ section {
       margin-bottom: 20px;
 
       cursor: pointer;
+
+      &:hover h2 {
+        text-decoration: underline;
+      }
     }
 
     img {
@@ -27,13 +31,14 @@ section {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      // border-radius: 2px;
 
       filter: contrast(1.1) grayscale(20%);
     }
 
     h2 {
       font-size: 22px;
-      font-family: $fontStack;
+      font-family: $secondaryFont;
       font-weight: 500;
       letter-spacing: 0.15;
       color: $primaryFontColor;

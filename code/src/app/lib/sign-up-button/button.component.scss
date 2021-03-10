@@ -1,0 +1,5 @@
+@import "../../../shared/config";
+
+button {
+  @include primaryOutlineButton(14px);
+}

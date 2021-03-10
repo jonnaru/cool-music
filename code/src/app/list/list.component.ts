@@ -8,11 +8,11 @@ import { HttpService } from '../http.service';
 })
 export class ListComponent implements OnInit {
   artists: any;
+  filteredArtists: any[] = [];
+  genres: string[] = [];
 
   showModal: boolean = false;
-
   videoLink: string = '';
-
   artistName: string = '';
 
   constructor(private _http: HttpService) {}
@@ -20,7 +20,20 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this._http.getMusic().subscribe((data) => {
       this.artists = data;
+
+      this.filteredArtists = this.artists;
+
+      this.genres = this.artists.reduce((filtered: any, artist: any) => {
+        const genres = artist.tags.filter(
+          (tag: any) =>
+            tag.group === 1 && !filtered.some((item: any) => item.id === tag.id)
+        );
+        filtered.push(...genres);
+        return filtered;
+      }, []);
+
       console.log(this.artists);
+      console.log(this.genres);
     });
   }
 
@@ -28,6 +41,17 @@ export class ListComponent implements OnInit {
     this.showModal = true;
     this.videoLink = videoLink;
     this.artistName = artistName;
+  }
+
+  filterList(filterArray: string[]) {
+    if (filterArray.length > 0) {
+      this.filteredArtists = this.artists.filter(
+        (artist: { tags: { name: string }[] }) =>
+          filterArray.includes(artist.tags[0].name)
+      );
+    } else {
+      this.filteredArtists = this.artists;
+    }
   }
 
   closeModal() {

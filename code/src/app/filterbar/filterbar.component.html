@@ -1,5 +1,29 @@
 <section>
   <div class="filter-container">
-    <h3>filterbar works!</h3>
+
+    <div class="check-container">
+      <label class="checkbox-container">
+        <input type="checkbox" value="Artist" (change)="handleTypeChecked($any($event.target))" />
+        <span class="custom-checkbox"></span>
+      </label>
+      <label class="checkbox-container-text">Artist</label>
+    </div>
+
+    <div class="check-container">
+      <label class="checkbox-container">
+        <input type="checkbox" value="Band" (change)="handleTypeChecked($any($event.target))" />
+        <span class="custom-checkbox"></span>
+      </label>
+      <label class="checkbox-container-text">Band</label>
+    </div>
+
+    <div class="check-container">
+      <label class="checkbox-container">
+        <input type="checkbox" value="DJ" (change)="handleTypeChecked($any($event.target))" />
+        <span class="custom-checkbox"></span>
+      </label>
+      <label class="checkbox-container-text">DJ</label>
+    </div>
+
   </div>
 </section>

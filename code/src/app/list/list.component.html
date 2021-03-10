@@ -1,7 +1,8 @@
-<section>
+<app-filterbar (typeFilterEvent)="filterList($event)"></app-filterbar>
 
-  <ul *ngIf="artists">
-    <li *ngFor="let artist of artists">
+<section>
+  <ul *ngIf="filteredArtists">
+    <li *ngFor="let artist of filteredArtists">
 
       <div class="img-container">
         <img src="{{ artist.picture }}">
@@ -28,12 +29,10 @@
         </div>
 
       </div>
-
     </li>
   </ul>
-
-  <app-list-modal *ngIf="showModal === true" [videoLink]="videoLink" [artistName]="artistName"
-    (closeModalEvent)="closeModal()">
-  </app-list-modal>
-
 </section>
+
+<app-list-modal *ngIf="showModal === true" [videoLink]="videoLink" [artistName]="artistName"
+  (closeModalEvent)="closeModal()">
+</app-list-modal>
