@@ -34,12 +34,17 @@
       font-family: $fontStack;
       margin-bottom: 10px;
       font-size: 28px;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 1px;
       color: #fff;
 
+      cursor: pointer;
+
       span {
         color: $primaryColor;
+      }
+      &:hover span {
+        text-decoration: underline;
       }
     }
   }

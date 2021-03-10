@@ -11,6 +11,7 @@ import { ListModalComponent } from './list-modal/list-modal.component';
 import { PlayComponent } from './lib/play/play.component';
 import { IconButtonComponent } from './lib/icon-button/icon-button.component';
 import { ExitComponent } from './lib/exit/exit.component';
+import { LogoComponent } from './lib/logo/logo.component';
 // import { ModalComponent } from './modal/modal.component'
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ExitComponent } from './lib/exit/exit.component';
     PlayComponent,
     IconButtonComponent,
     ExitComponent,
+    LogoComponent,
     // ModalComponent
   ],
   imports: [
