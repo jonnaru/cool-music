@@ -9,7 +9,7 @@ import { HttpService } from '../http.service';
 export class ListComponent implements OnInit {
   artists: any;
   filteredArtists: any[] = [];
-  genres: string[] = [];
+  genresArray: any[] = [];
 
   showModal: boolean = false;
   videoLink: string = '';
@@ -23,17 +23,18 @@ export class ListComponent implements OnInit {
 
       this.filteredArtists = this.artists;
 
-      this.genres = this.artists.reduce((filtered: any, artist: any) => {
-        const genres = artist.tags.filter(
-          (tag: any) =>
-            tag.group === 1 && !filtered.some((item: any) => item.id === tag.id)
-        );
-        filtered.push(...genres);
-        return filtered;
-      }, []);
+      const genresSet = new Set();
+      // getting genres from artists array
+      this.artists.forEach((artist: any) => {
+        artist.tags.forEach((tag: any) => {
+          if (tag.group === 1) {
+            genresSet.add(tag.name);
+          }
+        });
+      });
+      this.genresArray = [...genresSet];
 
       console.log(this.artists);
-      console.log(this.genres);
     });
   }
 
@@ -44,6 +45,7 @@ export class ListComponent implements OnInit {
   }
 
   filterList(filterArray: string[]) {
+    console.log('filterArray', filterArray);
     if (filterArray.length > 0) {
       this.filteredArtists = this.artists.filter(
         (artist: { tags: { name: string }[] }) =>
@@ -53,6 +55,38 @@ export class ListComponent implements OnInit {
       this.filteredArtists = this.artists;
     }
   }
+
+  sortArtists(type: string) {
+    if (type === 'lowPrice') {
+      this.filteredArtists = this.filteredArtists.sort((a: any, b: any) => {
+        return a.price - b.price;
+      });
+    } else if (type === 'highPrice') {
+      this.filteredArtists = this.filteredArtists.sort((a: any, b: any) => {
+        return b.price - a.price;
+      });
+    } else if (type === 'name') {
+      this.filteredArtists = this.filteredArtists.sort((a: any, b: any) => {
+        var nameA = a.name.toUpperCase();
+        var nameB = b.name.toUpperCase();
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
+        return 0;
+      });
+    }
+  }
+
+  // filterGenreList(filterArray: string[]) {
+  //   console.log('filterArray', filterArray);
+  //   if (filterArray.length > 0) {
+  //     this.filteredArtists = this.artists.filter(
+  //       (artist: { tags: { name: string }[] }) =>
+  //         artist.tags.some((tag) => filterArray.includes(tag.name))
+  //     );
+  //   } else {
+  //     this.filteredArtists = this.artists;
+  //   }
+  // }
 
   closeModal() {
     this.showModal = false;

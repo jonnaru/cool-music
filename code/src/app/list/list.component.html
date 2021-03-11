@@ -1,4 +1,6 @@
-<app-filterbar (typeFilterEvent)="filterList($event)"></app-filterbar>
+<!-- <app-filterbar (typeFilterEvent)="filterList($event)" (genreFilterEvent)="filterGenreList($event)" -->
+<app-filterbar (sortEvent)="sortArtists($event)" (typeFilterEvent)="filterList($event)" [genresArray]="genresArray">
+</app-filterbar>
 
 <section>
   <ul *ngIf="filteredArtists">

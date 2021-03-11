@@ -47,21 +47,30 @@
 
       <ng-template [ngIf]="showMenu === true">
         <!-- <div class="menu-backdrop" (click)="toggleShowMenu()"> -->
-        <ul>
-          <li>
+        <ul *ngIf="genresArray">
+          <li *ngFor="let genre of genresArray">
 
             <label class="check-container">
               <div class="checkbox-container">
-                <input type="checkbox" value="" />
+                <!-- <input type="checkbox" value="{{ genre }}" (change)="handleGenreChecked($any($event.target))" /> -->
+                <input type="checkbox" />
                 <span class="custom-checkbox"></span>
               </div>
-              <span class="checkbox-container-text">hello</span>
+              <span class="checkbox-container-text">{{ genre }}</span>
             </label>
 
           </li>
         </ul>
         <!-- </div> -->
       </ng-template>
+    </div>
+
+    <div>
+      <div>
+        <button (click)="handleOnSortClick('lowPrice')">sort lowest price</button>
+        <button (click)="handleOnSortClick('highPrice')">sort highest price</button>
+        <button (click)="handleOnSortClick('name')">sort name price</button>
+      </div>
     </div>
 
 
