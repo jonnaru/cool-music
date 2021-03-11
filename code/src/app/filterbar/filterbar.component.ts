@@ -10,6 +10,8 @@ export class FilterbarComponent implements OnInit {
 
   filterArray: string[] = [];
 
+  showMenu: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -20,5 +22,18 @@ export class FilterbarComponent implements OnInit {
       this.filterArray = this.filterArray.filter((item) => item !== type.value);
 
     this.typeFilterEvent.emit(this.filterArray);
+  }
+
+  // setOpenClass(): void {
+  //   const myClasses = {
+  //     active: this.
+  //   }
+  // }
+
+  toggleShowMenu(): void {
+    setTimeout(() => {
+      this.showMenu = !this.showMenu;
+    }, 0);
+    console.log('this.showMenu', this.showMenu);
   }
 }

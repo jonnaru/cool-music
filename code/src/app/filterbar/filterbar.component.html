@@ -1,6 +1,8 @@
 <section>
   <div class="filter-container">
 
+    <!-- TYPE -->
+
     <label class="check-container">
       <div class="checkbox-container">
         <input type="checkbox" value="Artist" (change)="handleTypeChecked($any($event.target))" />
@@ -24,6 +26,44 @@
       </div>
       <span class="checkbox-container-text">DJ</span>
     </label>
+
+    <!-- GENRE -->
+
+    <!-- <div>
+      <button id="button" [ngClass]="setOpenClass()">Genre
+      </button>
+
+      <ng-template [ngIf]="showMenu === true">
+        <ul [class.active]="showMenu === true">
+          <li>hej</li>
+        </ul>
+      </ng-template>
+    </div> -->
+
+    <div>
+      <button [class.active]="showMenu === true" (click)="toggleShowMenu()">
+        Genre
+      </button>
+
+      <ng-template [ngIf]="showMenu === true">
+        <!-- <div class="menu-backdrop" (click)="toggleShowMenu()"> -->
+        <ul>
+          <li>
+
+            <label class="check-container">
+              <div class="checkbox-container">
+                <input type="checkbox" value="" />
+                <span class="custom-checkbox"></span>
+              </div>
+              <span class="checkbox-container-text">hello</span>
+            </label>
+
+          </li>
+        </ul>
+        <!-- </div> -->
+      </ng-template>
+    </div>
+
 
   </div>
 </section>
