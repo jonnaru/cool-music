@@ -38,6 +38,10 @@ export class ListComponent implements OnInit {
     });
   }
 
+  formatPrice(price: number) {
+    return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
+  }
+
   handleClickVideo(videoLink: string, artistName: string) {
     this.showModal = true;
     this.videoLink = videoLink;
