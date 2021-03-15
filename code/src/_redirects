@@ -1,2 +1,2 @@
 /*    /index.html    200
-/artists/list  https://gigital-code-sample-api.herokuapp.com  200
+/api/*  https://gigital-code-sample-api.herokuapp.com/:splat  200
