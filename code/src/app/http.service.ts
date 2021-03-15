@@ -8,6 +8,6 @@ export class HttpService {
   constructor(private http: HttpClient) {}
 
   getMusic() {
-    return this.http.get('api/artists/list');
+    return this.http.get('/artists/list');
   }
 }
