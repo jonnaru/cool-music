@@ -1,0 +1,70 @@
+@import "../../shared/config";
+
+footer {
+  display: flex;
+
+  height: 300px;
+  background: $primaryFontColor;
+  color: #fff;
+
+  .tablet-nav {
+    display: none;
+  }
+
+  .footer-container {
+    @include basicLayout;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: calc(20px + 2%);
+    padding-right: calc(20px + 2%);
+
+    ul {
+      @include basicList;
+
+      li {
+        padding-left: 34px;
+        color: #fff;
+
+        cursor: pointer;
+
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .tablet-nav {
+      display: block;
+    }
+
+    align-items: center;
+    justify-content: center;
+    .footer-container {
+      flex-direction: column;
+
+      margin-top: 100px;
+
+      ul {
+        height: 100%;
+        li {
+          padding-left: 0;
+          padding: 20px 30px;
+          color: $primaryColor;
+
+          &:first-child {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

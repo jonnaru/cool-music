@@ -1,6 +1,7 @@
 @import "../../shared/config";
 @import "../../shared/custom-checkbox";
 @import "../../shared/genre-button";
+@import "../../shared/dropdown-menu";
 
 @keyframes example {
   from {
@@ -18,22 +19,73 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background: rgba(0, 255, 255, 0.8);
 
   z-index: 5;
 }
 
 section {
+  position: sticky;
+  top: 75px;
+  // height: 70px;
+
+  z-index: 5;
+
   @include customCheckbox;
   @include genreButton;
+
+  @media (max-width: 1024px) {
+    .custom-checkbox {
+      top: 1px;
+    }
+  }
 
   background: $basicColor;
 
   .filter-container {
     @include basicLayout;
 
-    display: flex;
     width: 100%;
     padding: 18px;
+
+    padding-left: calc(18px + 2%);
+    padding-right: calc(18px + 2%);
+  }
+
+  .type-container {
+    display: flex;
+    align-items: center;
+    // width: 100%;
+  }
+
+  .sort-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 1000px;
+
+    .sort-list {
+      display: flex;
+
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      button {
+        background: #fff;
+        margin-left: 10px;
+
+        @media (max-width: 1024px) {
+          background: none;
+          font-size: 12px;
+          padding-right: 0px;
+        }
+
+        &:hover {
+          background: none;
+        }
+      }
+    }
   }
 
   .check-container-wider {
@@ -42,7 +94,6 @@ section {
     cursor: pointer;
 
     &:hover .custom-checkbox {
-      // background: lighten($primaryFontColor, 60%);
       background: $primaryColor;
       border-color: $primaryColor;
     }
@@ -57,17 +108,19 @@ section {
   .genre-container {
     display: flex;
     align-items: center;
-  }
 
-  svg .cls-1 {
-    stroke: blue;
+    @media (max-width: 1024px) {
+      font-size: 12px;
+    }
   }
 
   .arrow-container {
     width: 16px;
     margin-left: 10px;
 
-    // background-image: url(../../assets/arrow-down.svg);
+    @media (max-width: 1024px) {
+      width: 14px;
+    }
   }
 
   .active {
@@ -75,53 +128,19 @@ section {
     // color: $secondaryColor;
   }
 
-  ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: absolute;
-    overflow: hidden;
-    align-items: flex-start;
-    justify-content: start;
-    box-sizing: content-box;
-    // padding-top: 20px;
-    height: 120px;
-    width: 500px;
-    color: #000;
-    transition: 0.5s;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 2px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
-      rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
-    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
-    // border: 1px solid black;
+  .genre-list {
+    @include dropdownMenu;
 
-    list-style-type: none;
-    margin: 0;
-    margin-top: 18px;
-    padding: 10px;
+    @media (max-width: 1024px) {
+      .custom-checkbox {
+        top: 3px;
+      }
+    }
 
-    font-size: 14px;
-    font-weight: 600;
-
-    animation-name: example;
-    animation-duration: 0.2s;
-
-    z-index: 10;
-  }
-
-  // .active + ul {
-  //   height: 100px;
-  //   padding: 20px 0;
-  // }
-
-  li {
-    padding: 0;
-    padding-left: 10px;
-    width: 150px;
-
-    // &:first-child {
-    //   padding-top: 20px;
-    // }
+    .genre {
+      padding: 0;
+      padding-left: 10px;
+      width: 150px;
+    }
   }
 }

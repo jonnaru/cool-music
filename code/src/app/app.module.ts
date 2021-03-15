@@ -14,6 +14,8 @@ import { ExitComponent } from './lib/exit/exit.component';
 import { LogoComponent } from './lib/logo/logo.component';
 import { ButtonComponent } from './lib/sign-up-button/button.component';
 import { LoginButtonComponent } from './lib/login-button/login-button.component';
+import { FooterComponent } from './footer/footer.component';
+import { FooterLogoComponent } from './lib/footer-logo/footer-logo.component';
 // import { ModalComponent } from './modal/modal.component'
 
 @NgModule({
@@ -29,6 +31,8 @@ import { LoginButtonComponent } from './lib/login-button/login-button.component'
     LogoComponent,
     ButtonComponent,
     LoginButtonComponent,
+    FooterComponent,
+    FooterLogoComponent,
     // ModalComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],

@@ -1,35 +1,41 @@
 <section>
+
   <div class="filter-container">
 
     <!-- TYPE -->
+    <div class="type-container">
 
-    <label class="check-container">
-      <div class="checkbox-container">
-        <input type="checkbox" value="Artist" (change)="handleTypeChecked($any($event.target))" />
-        <span class="custom-checkbox"></span>
-      </div>
-      <span class="checkbox-container-text">Artist</span>
-    </label>
 
-    <label class="check-container">
-      <div class="checkbox-container">
-        <input type="checkbox" value="Band" (change)="handleTypeChecked($any($event.target))" />
-        <span class="custom-checkbox"></span>
-      </div>
-      <span class="checkbox-container-text">Band</span>
-    </label>
+      <label class="check-container">
+        <div class="checkbox-container">
+          <input type="checkbox" value="Artist" (change)="handleTypeChecked($any($event.target))" />
+          <span class="custom-checkbox"></span>
+        </div>
+        <span class="checkbox-container-text">Artist</span>
+      </label>
 
-    <label class="check-container">
-      <div class="checkbox-container">
-        <input type="checkbox" value="DJ" (change)="handleTypeChecked($any($event.target))" />
-        <span class="custom-checkbox"></span>
-      </div>
-      <span class="checkbox-container-text">DJ</span>
-    </label>
+      <label class="check-container">
+        <div class="checkbox-container">
+          <input type="checkbox" value="Band" (change)="handleTypeChecked($any($event.target))" />
+          <span class="custom-checkbox"></span>
+        </div>
+        <span class="checkbox-container-text">Band</span>
+      </label>
 
-    <!-- GENRE -->
+      <label class="check-container">
+        <div class="checkbox-container">
+          <input type="checkbox" value="DJ" (change)="handleTypeChecked($any($event.target))" />
+          <span class="custom-checkbox"></span>
+        </div>
+        <span class="checkbox-container-text">DJ</span>
+      </label>
 
-    <!-- <div>
+
+
+
+      <!-- GENRE -->
+
+      <!-- <div>
       <button id="button" [ngClass]="setOpenClass()">Genre
       </button>
 
@@ -39,48 +45,57 @@
         </ul>
       </ng-template>
     </div> -->
-    <div class="button-container">
+      <div class="button-container">
 
-      <div>
         <div>
-          <button class="genre-container" [class.active]="showMenu === true" (click)="toggleShowMenu()">
-            Genre
-            <span class="arrow-container" [ngStyle]="{
+          <div>
+            <button class="genre-container" [class.active]="showMenu === true" (click)="toggleShowMenu()">
+              Genre
+              <span class="arrow-container" [ngStyle]="{
                 'transform': showMenu === true ? 'rotate(180deg)' : 'rotate(0deg)'
               }"><img src="../../assets/arrow-down.svg" alt="open"></span>
-          </button>
-        </div>
-
-        <ng-template [ngIf]="showMenu === true">
-          <ul *ngIf="genresArray">
-            <li *ngFor="let genre of genresArray">
-
-              <label class="check-container" class="check-container-wider">
-                <div class="checkbox-container">
-                  <!-- <input type="checkbox" value="{{ genre }}" (change)="handleGenreChecked($any($event.target))" /> -->
-                  <input type="checkbox" />
-                  <span class="custom-checkbox"></span>
-                </div>
-                <span class="checkbox-container-text">{{ genre }}</span>
-              </label>
-
-            </li>
-          </ul>
-          <div class="menu-backdrop" (click)="toggleShowMenu()">
+            </button>
           </div>
-        </ng-template>
-      </div>
 
-      <div>
-        <div>
-          <button (click)="handleOnSortClick('highPrice')">highest price</button>
-          <button (click)="handleOnSortClick('lowPrice')">lowest price</button>
-          <button (click)="handleOnSortClick('name')">Sort artists by name</button>
+          <ng-template [ngIf]="showMenu === true">
+            <ul class="genre-list" *ngIf="genresArray">
+              <li class="genre" *ngFor="let genre of genresArray">
+
+                <label class="check-container" class="check-container-wider">
+                  <div class="checkbox-container">
+                    <!-- <input type="checkbox" value="{{ genre }}" (change)="handleGenreChecked($any($event.target))" /> -->
+                    <input type="checkbox" />
+                    <span class="custom-checkbox"></span>
+                  </div>
+                  <span class="checkbox-container-text">{{ genre }}</span>
+                </label>
+
+              </li>
+            </ul>
+            <div class="menu-backdrop" (click)="toggleShowMenu()"></div>
+          </ng-template>
         </div>
       </div>
+
+      <div class="sort-container">
+
+        <ul class="sort-list">
+
+          <li>
+            <button (click)="handleOnSortClick('highPrice')">Highest price</button>
+          </li>
+          <li>
+            <button (click)="handleOnSortClick('lowPrice')">Lowest price</button>
+          </li>
+          <li>
+            <button (click)="handleOnSortClick('name')">Sort artists by name</button>
+          </li>
+        </ul>
+
+      </div>
+
 
     </div>
-
 
   </div>
 </section>

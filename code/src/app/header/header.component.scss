@@ -2,7 +2,11 @@
 
 header {
   position: sticky;
+  top: 0;
+  height: 75px;
   background: white;
+
+  z-index: 5;
 
   .header-container {
     @include basicLayout;
@@ -13,16 +17,18 @@ header {
 
     width: 100%;
 
-    padding: 10px 15px;
+    // padding: 10px 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: calc(15px + 2%);
+    padding-right: calc(15px + 2%);
 
     ul {
-      display: flex;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+      @include basicList;
 
-      font-size: 14px;
-      font-weight: 600;
+      @media (max-width: 1024px) {
+        display: none;
+      }
 
       li {
         padding: 0 14px;

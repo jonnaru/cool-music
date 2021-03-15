@@ -1,7 +1,10 @@
 @import "../../shared/config";
 
-section {
+main {
   @include basicLayout;
+
+  padding-left: $basicWidth;
+  padding-right: $basicWidth;
 
   ul {
     display: flex;
@@ -23,6 +26,24 @@ section {
       &:hover h2 {
         text-decoration: underline;
       }
+
+      &:hover img {
+        mix-blend-mode: normal;
+        opacity: 1;
+        transition: 0.1s;
+      }
+
+      @media (max-width: 1400px) {
+        width: 25%;
+      }
+
+      @media (max-width: 1024px) {
+        width: 50%;
+      }
+
+      @media (max-width: 667px) {
+        width: 100%;
+      }
     }
 
     img {
@@ -34,6 +55,14 @@ section {
       // border-radius: 2px;
 
       filter: contrast(1.1) grayscale(20%);
+      mix-blend-mode: luminosity;
+      opacity: 0.6;
+      transition: 0.1s;
+
+      @media (max-width: 1024px) {
+        opacity: 1;
+        mix-blend-mode: normal;
+      }
     }
 
     h2 {
@@ -59,6 +88,12 @@ section {
       position: relative;
       box-sizing: content-box;
       padding-top: 100%; /* 1:1 Aspect Ratio */
+
+      background-color: rgb(195, 76, 90);
+
+      @media (max-width: 1024px) {
+        background-color: none;
+      }
     }
 
     .artist-type {
@@ -79,6 +114,16 @@ section {
     .artist-content-container {
       display: flex;
       flex-direction: column;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px 120px;
+
+    button {
+      @include primaryOutlineButton(0);
     }
   }
 }

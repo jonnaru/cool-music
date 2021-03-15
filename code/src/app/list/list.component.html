@@ -2,7 +2,7 @@
 <app-filterbar (sortEvent)="sortArtists($event)" (typeFilterEvent)="filterList($event)" [genresArray]="genresArray">
 </app-filterbar>
 
-<section>
+<main>
   <ul *ngIf="filteredArtists">
     <li *ngFor="let artist of filteredArtists">
 
@@ -33,7 +33,12 @@
       </div>
     </li>
   </ul>
-</section>
+
+  <div class="button-container">
+    <button>Load more artists</button>
+  </div>
+
+</main>
 
 <app-list-modal *ngIf="showModal === true" [videoLink]="videoLink" [artistName]="artistName"
   (closeModalEvent)="closeModal()">
