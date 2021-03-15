@@ -6,6 +6,8 @@ main {
   padding-left: $basicWidth;
   padding-right: $basicWidth;
 
+  min-height: calc(100vh - 75px - 67px - 300px);
+
   ul {
     display: flex;
     flex-wrap: wrap;

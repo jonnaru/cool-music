@@ -48,9 +48,9 @@ footer {
 
     align-items: center;
     justify-content: center;
+
     .footer-container {
       flex-direction: column;
-
       margin-top: 100px;
 
       ul {
@@ -63,6 +63,28 @@ footer {
           &:first-child {
             color: #fff;
           }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 667px) {
+    .footer-container {
+      margin-top: 70px;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        width: 100%;
+        margin-top: 20px;
+
+        li {
+          text-align: center;
+          margin: auto;
+          width: 100%;
+          padding: 4px;
+          width: 50%;
         }
       }
     }

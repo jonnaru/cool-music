@@ -92,6 +92,17 @@
           </li>
         </ul>
 
+        <button class="sort-button">Sort</button>
+        <div class="sort-dropdown-container">
+
+
+          <ul>
+            <li (click)="handleOnSortClick('highPrice')">Highest price</li>
+            <li (click)="handleOnSortClick('lowPrice')">Lowest price</li>
+            <li (click)="handleOnSortClick('name')">Sort artists by name</li>
+          </ul>
+        </div>
+
       </div>
 
 

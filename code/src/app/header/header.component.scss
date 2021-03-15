@@ -17,11 +17,31 @@ header {
 
     width: 100%;
 
-    // padding: 10px 15px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: calc(15px + 2%);
     padding-right: calc(15px + 2%);
+
+    .nav-header-container {
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+
+    .header-button-container {
+      @media (max-width: 667px) {
+        display: none;
+      }
+    }
+
+    .hamburger-menu {
+      display: none;
+
+      @media (max-width: 667px) {
+        display: block;
+        margin-top: 8px;
+      }
+    }
 
     ul {
       @include basicList;

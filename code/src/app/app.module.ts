@@ -16,6 +16,7 @@ import { ButtonComponent } from './lib/sign-up-button/button.component';
 import { LoginButtonComponent } from './lib/login-button/login-button.component';
 import { FooterComponent } from './footer/footer.component';
 import { FooterLogoComponent } from './lib/footer-logo/footer-logo.component';
+import { HamburgerComponent } from './lib/hamburger/hamburger.component';
 // import { ModalComponent } from './modal/modal.component'
 
 @NgModule({
@@ -33,6 +34,7 @@ import { FooterLogoComponent } from './lib/footer-logo/footer-logo.component';
     LoginButtonComponent,
     FooterComponent,
     FooterLogoComponent,
+    HamburgerComponent,
     // ModalComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],

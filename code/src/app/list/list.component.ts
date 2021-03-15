@@ -23,16 +23,14 @@ export class ListComponent implements OnInit {
 
       this.filteredArtists = this.artists;
 
-      const genresSet = new Set();
       // getting genres from artists array
       this.artists.forEach((artist: any) => {
         artist.tags.forEach((tag: any) => {
-          if (tag.group === 1) {
-            genresSet.add(tag.name);
+          if (tag.group === 1 && !this.genresArray.includes(tag.name)) {
+            this.genresArray.push(tag.name);
           }
         });
       });
-      this.genresArray = [...genresSet];
 
       console.log(this.artists);
     });
