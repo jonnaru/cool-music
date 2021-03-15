@@ -1,14 +1,19 @@
 // fonts:
-$fontStack: "Poppins", sans-serif;
+$fontStack: "Open Sans", sans-serif;
+$secondaryFont: "Poppins", sans-serif;
 
 // colors:
 $primaryColor: #f53b57;
 $secondaryColor: #ccc;
+$basicColor: #eee;
 
 $primaryFontColor: #333;
 
+// layout
+$basicWidth: 2%;
+
 @mixin basicLayout {
-  max-width: 1400px;
+  max-width: 1560px;
   margin: auto;
 }
 
@@ -19,4 +24,62 @@ $primaryFontColor: #333;
   padding: 0;
 
   cursor: pointer;
+}
+
+@mixin basicList {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@mixin primaryOutlineButton($margin-left) {
+  font-family: $fontStack;
+  margin-left: $margin-left;
+
+  border: 2px solid $primaryColor;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 2px;
+  font-size: 14px;
+  background: $primaryColor;
+  padding: 6px 12px;
+  outline: none;
+  transition: 0.1s;
+
+  cursor: pointer;
+
+  &:hover {
+    background: none;
+    color: $primaryColor;
+
+    transition: 0.2s;
+  }
+}
+
+@mixin secondaryButton {
+  font-family: $fontStack;
+
+  border: 2px solid $primaryFontColor;
+  color: $primaryFontColor;
+  font-weight: 600;
+  border-radius: 2px;
+  font-size: 14px;
+  background: #fff;
+  padding: 6px 12px;
+  outline: none;
+  transition: 0.1s;
+
+  cursor: pointer;
+
+  &:hover {
+    background: $primaryFontColor;
+    border: 2px solid $primaryFontColor;
+    color: #fff;
+
+    transition: 0.2s;
+  }
 }

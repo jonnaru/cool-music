@@ -1,0 +1,21 @@
+@mixin genreButton {
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding: 6px 8px;
+
+    font-family: $fontStack;
+    color: $primaryFontColor;
+    font-size: 14px;
+
+    transition: 0.1s;
+    cursor: pointer;
+
+    &:hover {
+      color: $primaryColor;
+      transition: 0.2s;
+    }
+  }
+}

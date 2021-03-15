@@ -1,0 +1,67 @@
+@mixin customCheckbox {
+  .check-container {
+    display: inline-flex;
+
+    width: 80px;
+    margin-right: 16px;
+
+    cursor: pointer;
+
+    &:hover .custom-checkbox {
+      // background: lighten($primaryFontColor, 60%);
+      background: $primaryFontColor;
+    }
+  }
+
+  .checkbox-container {
+    position: relative;
+    user-select: none;
+
+    input {
+      position: absolute;
+      height: 0;
+      width: 0;
+      opacity: 0;
+    }
+  }
+
+  .checkbox-container-text {
+    margin-left: 24px;
+    font-size: 14px;
+    color: $primaryFontColor;
+
+    @media (max-width: 1024px) {
+      font-size: 12px;
+      margin-left: 18px;
+    }
+  }
+
+  .custom-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+
+    border-radius: 2px;
+    border: 2px solid $primaryFontColor;
+
+    @media (max-width: 1024px) {
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  .checkbox-container input:checked ~ .custom-checkbox {
+    background-color: $primaryColor;
+    background-image: url(../assets/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border: 2px solid $primaryColor;
+  }
+
+  .checkbox-container input:focus + .custom-checkbox {
+    outline: none;
+  }
+}
