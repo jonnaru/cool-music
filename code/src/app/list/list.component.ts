@@ -31,8 +31,6 @@ export class ListComponent implements OnInit {
           }
         });
       });
-
-      console.log(this.artists);
     });
   }
 
@@ -47,7 +45,6 @@ export class ListComponent implements OnInit {
   }
 
   filterList(filterArray: string[]) {
-    console.log('filterArray', filterArray);
     if (filterArray.length > 0) {
       this.filteredArtists = this.artists.filter(
         (artist: { tags: { name: string }[] }) =>
@@ -77,18 +74,6 @@ export class ListComponent implements OnInit {
       });
     }
   }
-
-  // filterGenreList(filterArray: string[]) {
-  //   console.log('filterArray', filterArray);
-  //   if (filterArray.length > 0) {
-  //     this.filteredArtists = this.artists.filter(
-  //       (artist: { tags: { name: string }[] }) =>
-  //         artist.tags.some((tag) => filterArray.includes(tag.name))
-  //     );
-  //   } else {
-  //     this.filteredArtists = this.artists;
-  //   }
-  // }
 
   closeModal() {
     this.showModal = false;

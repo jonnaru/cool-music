@@ -3,6 +3,7 @@
 </app-filterbar>
 
 <main>
+
   <ul *ngIf="filteredArtists">
     <li *ngFor="let artist of filteredArtists">
 
@@ -11,8 +12,8 @@
       </div>
 
       <div class="content-container">
-        <div class="artist-content-container">
 
+        <div class="artist-content-container">
           <h2>{{ artist.name }}</h2>
 
           <span *ngIf="artist.tags">
@@ -31,6 +32,7 @@
         </div>
 
       </div>
+
     </li>
   </ul>
 

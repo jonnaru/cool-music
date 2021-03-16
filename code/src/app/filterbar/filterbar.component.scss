@@ -26,6 +26,7 @@
 
 section {
   position: sticky;
+  background: $basicColor;
   top: 75px;
 
   z-index: 5;
@@ -38,8 +39,6 @@ section {
       top: 1px;
     }
   }
-
-  background: $basicColor;
 
   .filter-container {
     @include basicLayout;
@@ -54,13 +53,13 @@ section {
   .type-container {
     display: flex;
     align-items: center;
-    // width: 100%;
   }
 
   .sort-container {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
+
     width: 1000px;
 
     .sort-dropdown-container {
@@ -84,6 +83,7 @@ section {
 
         @media (max-width: 1024px) {
           background: none;
+
           font-size: 12px;
           padding-right: 0px;
         }
@@ -102,18 +102,20 @@ section {
       @media (max-width: 667px) {
         @include dropdownMenu;
 
+        display: block;
+
         top: 67px;
         right: 0;
 
-        margin: 0;
-        padding: 0;
         width: 200px;
         height: 124px;
 
-        display: block;
+        margin: 0;
+        padding: 0;
 
         ul {
           list-style-type: none;
+
           padding-left: 20px;
           padding-top: 6px;
 
@@ -124,13 +126,16 @@ section {
       }
     }
 
+    /////// SORT LIST FOR MOBILE TOUCH SCREEN
     @media (max-width: 667px) {
       .sort-dropdown-container {
         display: none;
+
         &:active {
           display: block;
         }
       }
+
       .sort-button {
         display: block;
 
@@ -140,6 +145,7 @@ section {
       }
     }
   }
+  ///////
 
   .check-container-wider {
     width: 140px;
@@ -149,13 +155,19 @@ section {
     &:hover .custom-checkbox {
       background: $primaryColor;
       border-color: $primaryColor;
+
+      @media (max-width: 1024px) {
+        background: none;
+        border-color: $primaryFontColor;
+      }
     }
   }
 
   .button-container {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+
+    width: 100%;
 
     @media (max-width: 667px) {
       display: none;
@@ -182,7 +194,6 @@ section {
 
   .active {
     background: #fff;
-    // color: $secondaryColor;
   }
 
   .genre-list {

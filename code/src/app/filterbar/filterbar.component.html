@@ -1,5 +1,4 @@
 <section>
-
   <div class="filter-container">
 
     <!-- TYPE -->
@@ -30,24 +29,10 @@
         <span class="checkbox-container-text">DJ</span>
       </label>
 
-
-
-
       <!-- GENRE -->
-
-      <!-- <div>
-      <button id="button" [ngClass]="setOpenClass()">Genre
-      </button>
-
-      <ng-template [ngIf]="showMenu === true">
-        <ul [class.active]="showMenu === true">
-          <li>hej</li>
-        </ul>
-      </ng-template>
-    </div> -->
       <div class="button-container">
-
         <div>
+
           <div>
             <button class="genre-container" [class.active]="showMenu === true" (click)="toggleShowMenu()">
               Genre
@@ -58,12 +43,13 @@
           </div>
 
           <ng-template [ngIf]="showMenu === true">
+
             <ul class="genre-list" *ngIf="genresArray">
               <li class="genre" *ngFor="let genre of genresArray">
 
                 <label class="check-container" class="check-container-wider">
                   <div class="checkbox-container">
-                    <!-- <input type="checkbox" value="{{ genre }}" (change)="handleGenreChecked($any($event.target))" /> -->
+
                     <input type="checkbox" />
                     <span class="custom-checkbox"></span>
                   </div>
@@ -72,11 +58,14 @@
 
               </li>
             </ul>
+
             <div class="menu-backdrop" (click)="toggleShowMenu()"></div>
           </ng-template>
+
         </div>
       </div>
 
+      <!-- SORT -->
       <div class="sort-container">
 
         <ul class="sort-list">
@@ -90,12 +79,13 @@
           <li>
             <button (click)="handleOnSortClick('name')">Sort artists by name</button>
           </li>
+
         </ul>
 
+        <!-- SORT MOBILE -->
         <button class="sort-button">Sort</button>
+
         <div class="sort-dropdown-container">
-
-
           <ul>
             <li (click)="handleOnSortClick('highPrice')">Highest price</li>
             <li (click)="handleOnSortClick('lowPrice')">Lowest price</li>
@@ -104,7 +94,6 @@
         </div>
 
       </div>
-
 
     </div>
 

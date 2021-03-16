@@ -8,8 +8,11 @@
     cursor: pointer;
 
     &:hover .custom-checkbox {
-      // background: lighten($primaryFontColor, 60%);
       background: $primaryFontColor;
+
+      @media (max-width: 1024px) {
+        background: none;
+      }
     }
   }
 
@@ -19,6 +22,7 @@
 
     input {
       position: absolute;
+
       height: 0;
       width: 0;
       opacity: 0;
@@ -38,6 +42,7 @@
 
   .custom-checkbox {
     position: absolute;
+
     top: 0;
     left: 0;
     height: 18px;

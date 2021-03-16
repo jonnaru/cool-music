@@ -1,4 +1,5 @@
 @import "../../../shared/config";
+@import "../../../shared/secondary-button";
 
 button {
   @include secondaryButton;
